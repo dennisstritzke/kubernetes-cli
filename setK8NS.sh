@@ -10,7 +10,7 @@
 [ -z "$K8_CERTIFICATE_AUTHORITY_DATA" ] || [ -z "$K8_SERVER" ] || [ -z "$K8_CLIENT_CERTIFICATE_DATA" ] || [ -z "$K8_CLIENT_KEY_DATA" ] && echo "Exiting..." && exit 1
 
 
-cat <<EOT >> ~/.kube/config
+cat <<EOF > ~/.kube/config
 apiVersion: v1
 clusters:
 - cluster:
@@ -31,4 +31,4 @@ users:
   user:
     client-certificate-data: $K8_CLIENT_CERTIFICATE_DATA
     client-key-data: $K8_CLIENT_KEY_DATA
-EOT
+EOF
